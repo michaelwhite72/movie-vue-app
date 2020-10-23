@@ -4,14 +4,37 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/movies">MoviesIndex</router-link> |
       <router-link to="/movies/new">MoviesNew</router-link> |
-      <router-link to="/signup">Signup</router-link> |
-      <router-link to="/login">Login</router-link> |
-      <router-link to="/logout">Logout</router-link> 
+      <span v-if="isLoggedIn()">
+        <router-link to="/logout">Logout</router-link>
+      </span>
+      <span v-else>
+        <router-link to="/signup">Signup</router-link> |
+        <router-link to="/login">Login</router-link>
+      </span>
       <!-- <router-link to="/about">About</router-link> -->
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
+
+<script>
+export default {
+  data: function() {
+    return {
+      flashMessage: "",
+    };
+  },
+
+  methods: {
+    isLoggedIn: function() {
+      return localStorage.getItem("jwt");
+    },
+    getUserId: function() {
+      return localStorage.getItem("user_id");
+    },
+  },
+};
+</script>
 
 <style>
 #app {

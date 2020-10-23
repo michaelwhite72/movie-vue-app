@@ -5,9 +5,9 @@ import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
 import MoviesIndex from "../views/MoviesIndex.vue";
-import MoviesNew from "../views/MoviesNew";
-import MoviesShow from "../views/MoviesShow";
-import MoviesEdit from "../views/MoviesEdit";
+import MoviesNew from "../views/MoviesNew.vue";
+import MoviesShow from "../views/MoviesShow.vue";
+import MoviesEdit from "../views/MoviesEdit.vue";
 
 
 Vue.use(VueRouter)
@@ -26,6 +26,9 @@ const routes = [
   //   // which is lazy-loaded when the route is visited.
   //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   // },
+
+  
+
   {
     path: "/signup",
     name: "signup",
